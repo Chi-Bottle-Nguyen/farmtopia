@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart'; //google font packages, fetch font http
 
 class HomePage extends StatefulWidget {
   @override
@@ -9,8 +10,17 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Yaa we farm token here ayeeee!!!'),
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(60.0),
+          // Creating AppBar
+          child: AppBar(
+            title: Text(
+              'Farmtopia',
+              style: GoogleFonts.pacifico(fontSize: 30.0),
+              overflow: TextOverflow.ellipsis,
+            ),
+            centerTitle: true,
+          ),
         ),
         body: _mybody());
   }
