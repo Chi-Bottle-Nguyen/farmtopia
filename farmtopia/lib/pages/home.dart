@@ -22,7 +22,27 @@ class _HomePageState extends State<HomePage> {
             centerTitle: true,
           ),
         ),
-        body: _mybody());
+        body: _mybody(),
+
+        //Create Bottom navigation bar
+        bottomNavigationBar: BottomNavigationBar(
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.account_circle),
+              label: 'Profile',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.settings_sharp),
+              label: 'Settings',
+            ),
+          ],
+          selectedItemColor: Colors.pink[200],
+          //onTap: _onItemTapped,
+        ));
   }
 
   Widget _mybody() {
