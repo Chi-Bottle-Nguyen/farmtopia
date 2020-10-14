@@ -1,8 +1,9 @@
-import 'package:bottom_navy_bar/bottom_navy_bar.dart';
+import 'package:bottom_navy_bar/bottom_navy_bar.dart'; // interactive bottom navigation bar package
 import 'package:farmtopia/pages/profile.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart'; //google font packages, fetch font http
+import 'package:google_fonts/google_fonts.dart'; // google font package, fetch font http
 
+// checkout: https://medium.com/@greg.perry/statefulwidgets-key-state-8ad83ac2e54f
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -16,6 +17,8 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     _pageController = PageController();
+    //use with the PageView widget below
+    //check: https://api.flutter.dev/flutter/widgets/PageController-class.html
   }
 
   @override
@@ -30,7 +33,7 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.pink[50],
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(60.0),
-          // Creating AppBar
+          //   *****CREATING APP BAR*****
           child: AppBar(
             title: Text(
               'Farmtopia',
@@ -42,25 +45,32 @@ class _HomePageState extends State<HomePage> {
         ),
         body: SizedBox.expand(
           child: PageView(
+            //PageView and PageController, check: https://api.flutter.dev/flutter/widgets/PageView-class.html
+            //Use to navigate to different pages
             controller: _pageController,
             onPageChanged: (index) {
               setState(() => _currentIndex = index);
             },
             children: <Widget>[
+              //List of widget to navigate to
               _mybody(),
               Profile(),
+              //Placeholder
               Container(
                 color: Colors.pink,
               ),
+              //Placeholder
               Container(
                 color: Colors.pink[50],
               ),
             ],
           ),
         ),
-        //Create Bottom navigation bar
+        //Create Bottom navigation bar using the imported package
+        //check: https://pub.dev/packages/bottom_navy_bar
         bottomNavigationBar: BottomNavyBar(
           selectedIndex: _currentIndex,
+          //Navigate to different page when tap an icon
           onItemSelected: (index) {
             setState(() => _currentIndex = index);
             _pageController.jumpToPage(index);
