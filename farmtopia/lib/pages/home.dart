@@ -1,5 +1,6 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart'; // interactive bottom navigation bar package
 import 'package:farmtopia/pages/profile.dart';
+import 'package:farmtopia/pages/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart'; // google font package, fetch font http
 
@@ -30,7 +31,8 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.pink[50],
+        //backgroundColor: Colors.pink[50],
+        backgroundColor: Color(0xFFF3DB74),
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(60.0),
           //   *****CREATING APP BAR*****
@@ -59,10 +61,7 @@ class _HomePageState extends State<HomePage> {
               Container(
                 color: Colors.pink,
               ),
-              //Placeholder
-              Container(
-                color: Colors.pink[50],
-              ),
+              Settings()
             ],
           ),
         ),
@@ -79,19 +78,20 @@ class _HomePageState extends State<HomePage> {
             BottomNavyBarItem(
                 icon: Icon(Icons.home),
                 title: Text('Home'),
-                activeColor: Color(0xFFF48B90)),
+                activeColor: Color(0xFFFFBA52)),
             BottomNavyBarItem(
                 icon: Icon(Icons.account_circle),
                 title: Text('Profile'),
-                activeColor: Color(0xFFF48B90)),
+                activeColor: Color(0xFFFFBA52)),
+            //activeColor: Color(0xFFF48B90)),
             BottomNavyBarItem(
                 icon: Icon(Icons.search),
                 title: Text('Search'),
-                activeColor: Color(0xFFF48B90)),
+                activeColor: Color(0xFFFFBA52)),
             BottomNavyBarItem(
                 icon: Icon(Icons.settings_sharp),
                 title: Text('Settings'),
-                activeColor: Color(0xFFF48B90)),
+                activeColor: Color(0xFFFFBA52)),
           ],
         ));
   }

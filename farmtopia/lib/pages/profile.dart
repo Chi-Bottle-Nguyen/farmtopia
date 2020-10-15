@@ -10,7 +10,7 @@ class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.pink[50],
+        backgroundColor: Color(0xFFF3DB74),
         body: Center(
           child: Text(
             'Profile',
