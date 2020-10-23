@@ -59,7 +59,10 @@ class _HomePageState extends State<HomePage> {
               Profile(),
               //Placeholder
               Container(
-                color: Colors.pink,
+                color: Color(0xFFFFBA52),
+              ),
+              Container(
+                color: Color(0xFFFFBA52),
               ),
               Settings()
             ],
@@ -84,6 +87,10 @@ class _HomePageState extends State<HomePage> {
                 title: Text('Profile'),
                 activeColor: Color(0xFFFFBA52)),
             //activeColor: Color(0xFFF48B90)),
+            BottomNavyBarItem(
+                icon: Icon(Icons.create_outlined),
+                title: Text('Post'),
+                activeColor: Color(0xFFFFBA52)),
             BottomNavyBarItem(
                 icon: Icon(Icons.search),
                 title: Text('Search'),
