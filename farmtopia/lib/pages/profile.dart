@@ -52,61 +52,61 @@ class _ProfileState extends State<Profile> {
             color: Colors.white,
             borderRadius: BorderRadius.only(topLeft: Radius.circular(75.0))),
         child: ListView(
-          children: [blogPost(), blogPost()],
+          children: [SizedBox(height: 20.0), blogPost(), blogPost()],
         ),
       )
     ]);
   }
+}
 
-  Widget blogPost() {
-    return Padding(
-      padding: EdgeInsets.only(left: 20.0, top: 40.0, right: 10.0),
-      child: Container(
-          height: 160.0,
-          decoration: BoxDecoration(boxShadow: [
-            BoxShadow(
-                color: Colors.grey,
-                //offset: Offset(5, 5),
-                blurRadius: 1.0,
-                spreadRadius: 1.0)
-          ], color: Colors.white, borderRadius: BorderRadius.circular(25.0)),
-          child: Column(
-            children: [
-              SizedBox(height: 10.0),
-              Row(
-                children: [
-                  SizedBox(width: 10.0),
-                  CircleAvatar(
-                      backgroundImage: NetworkImage(
-                          'https://www.clinicasamaniego.com/wp-content/uploads/sites/5/2018/10/uno.png')),
-                  SizedBox(width: 5.0),
-                  Column(
-                    children: [
-                      Row(children: [
-                        Text(
-                          'Name',
-                          style: TextStyle(fontSize: 24.0),
-                        ),
-                        SizedBox(
-                          width: 5.0,
-                        ),
-                        Icon(Icons.agriculture)
-                      ]),
-                      Text('10-23-2020')
-                    ],
-                  )
-                ],
-              ),
-              SizedBox(
-                height: 20.0,
-              ),
-              Text(
-                'Some content blah blah blah blah\nsome stuff hhhhihihihihihihihihihi \ntesting testing',
-                textAlign: TextAlign.start,
-                style: TextStyle(fontSize: 18.0),
-              )
-            ],
-          )),
-    );
-  }
+Widget blogPost() {
+  return Padding(
+    padding: EdgeInsets.only(left: 20.0, top: 20.0, right: 10.0),
+    child: Container(
+        height: 160.0,
+        decoration: BoxDecoration(boxShadow: [
+          BoxShadow(
+              color: Colors.grey,
+              //offset: Offset(5, 5),
+              blurRadius: 1.0,
+              spreadRadius: 1.0)
+        ], color: Colors.white, borderRadius: BorderRadius.circular(25.0)),
+        child: Column(
+          children: [
+            SizedBox(height: 10.0),
+            Row(
+              children: [
+                SizedBox(width: 10.0),
+                CircleAvatar(
+                    backgroundImage: NetworkImage(
+                        'https://www.clinicasamaniego.com/wp-content/uploads/sites/5/2018/10/uno.png')),
+                SizedBox(width: 5.0),
+                Column(
+                  children: [
+                    Row(children: [
+                      Text(
+                        'Name',
+                        style: TextStyle(fontSize: 24.0),
+                      ),
+                      SizedBox(
+                        width: 5.0,
+                      ),
+                      Icon(Icons.agriculture)
+                    ]),
+                    Text('10-23-2020')
+                  ],
+                )
+              ],
+            ),
+            SizedBox(
+              height: 20.0,
+            ),
+            Text(
+              'Some content blah blah blah blah\nsome stuff hhhhihihihihihihihihihi \ntesting testing',
+              textAlign: TextAlign.start,
+              style: TextStyle(fontSize: 18.0),
+            )
+          ],
+        )),
+  );
 }

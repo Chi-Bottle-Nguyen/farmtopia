@@ -104,9 +104,12 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _mybody() {
-    return Center(
+    return ListView(
+      children: [blogPost(), blogPost(), blogPost(), blogPost()],
+    );
+    /*  return Center(
       child: Text('Welcome to FarmTopia',
           style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold)),
-    );
+    ); */
   }
 }
