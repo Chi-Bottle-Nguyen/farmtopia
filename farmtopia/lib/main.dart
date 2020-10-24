@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:farmtopia/pages/home.dart';
+import 'package:farmtopia/pages/login.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.light,
       ),
       home: HomePage(),
+      //home: Login(),
       debugShowCheckedModeBanner: false,
     );
   }
