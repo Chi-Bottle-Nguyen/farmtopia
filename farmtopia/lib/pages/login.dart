@@ -45,7 +45,7 @@ class _LoginState extends State<Login> {
                 labelText: 'Password',
               ))),
           SizedBox(
-            height: 100.0,
+            height: 50.0,
           ),
           new Container(
             width: 220.0,
