@@ -1,4 +1,5 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart'; // interactive bottom navigation bar package
+import 'package:farmtopia/components/post.dart';
 import 'package:farmtopia/pages/profile.dart';
 import 'package:farmtopia/pages/settings.dart';
 import 'package:flutter/material.dart';
@@ -105,7 +106,24 @@ class _HomePageState extends State<HomePage> {
 
   Widget _mybody() {
     return ListView(
-      children: [blogPost(), blogPost(), blogPost(), blogPost()],
+      children: [
+        BlogPost(
+          content:
+              'Some content blah blah blah blah\nsome stuff hhhhihihihihihihihihihi \ntesting testing',
+        ),
+        BlogPost(
+          content:
+              'Some content blah blah blah blah\nsome stuff hhhhihihihihihihihihihi \ntesting testing',
+        ),
+        BlogPost(
+          content:
+              'Some content blah blah blah blah\nsome stuff hhhhihihihihihihihihihi \ntesting testing',
+        ),
+        BlogPost(
+          content:
+              'Some content blah blah blah blah\nsome stuff hhhhihihihihihihihihihi \ntesting testing',
+        )
+      ],
     );
     /*  return Center(
       child: Text('Welcome to FarmTopia',

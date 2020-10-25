@@ -1,3 +1,4 @@
+import 'package:farmtopia/components/post.dart';
 import 'package:flutter/material.dart';
 //import 'package:google_fonts/google_fonts.dart';
 
@@ -19,7 +20,6 @@ class _ProfileState extends State<Profile> {
           child: Row(
             children: [
               CircleAvatar(
-                  backgroundColor: Colors.blue,
                   radius: 60.0,
                   backgroundImage: NetworkImage(
                       'https://www.clinicasamaniego.com/wp-content/uploads/sites/5/2018/10/uno.png')),
@@ -52,61 +52,19 @@ class _ProfileState extends State<Profile> {
             color: Colors.white,
             borderRadius: BorderRadius.only(topLeft: Radius.circular(75.0))),
         child: ListView(
-          children: [SizedBox(height: 20.0), blogPost(), blogPost()],
+          children: [
+            SizedBox(height: 20.0),
+            BlogPost(
+              content:
+                  'Some content blah blah blah blah\nsome stuff hhhhihihihihihihihihihi \ntesting testing',
+            ),
+            BlogPost(
+              content:
+                  'Some content blah blah blah blah\nsome stuff hhhhihihihihihihihihihi \ntesting testing',
+            )
+          ],
         ),
       )
     ]);
   }
-}
-
-Widget blogPost() {
-  return Padding(
-    padding: EdgeInsets.only(left: 20.0, top: 20.0, right: 10.0),
-    child: Container(
-        height: 160.0,
-        decoration: BoxDecoration(boxShadow: [
-          BoxShadow(
-              color: Colors.grey,
-              //offset: Offset(5, 5),
-              blurRadius: 1.0,
-              spreadRadius: 1.0)
-        ], color: Colors.white, borderRadius: BorderRadius.circular(25.0)),
-        child: Column(
-          children: [
-            SizedBox(height: 10.0),
-            Row(
-              children: [
-                SizedBox(width: 10.0),
-                CircleAvatar(
-                    backgroundImage: NetworkImage(
-                        'https://www.clinicasamaniego.com/wp-content/uploads/sites/5/2018/10/uno.png')),
-                SizedBox(width: 5.0),
-                Column(
-                  children: [
-                    Row(children: [
-                      Text(
-                        'Name',
-                        style: TextStyle(fontSize: 24.0),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Icon(Icons.agriculture)
-                    ]),
-                    Text('10-23-2020')
-                  ],
-                )
-              ],
-            ),
-            SizedBox(
-              height: 20.0,
-            ),
-            Text(
-              'Some content blah blah blah blah\nsome stuff hhhhihihihihihihihihihi \ntesting testing',
-              textAlign: TextAlign.start,
-              style: TextStyle(fontSize: 18.0),
-            )
-          ],
-        )),
-  );
 }

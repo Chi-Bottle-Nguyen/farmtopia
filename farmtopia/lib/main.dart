@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:farmtopia/pages/home.dart';
+//import 'package:farmtopia/pages/home.dart';
 import 'package:farmtopia/pages/login.dart';
 
 void main() => runApp(MyApp());
@@ -14,8 +14,12 @@ class MyApp extends StatelessWidget {
         primaryColor: Color(0xFFE683A9),
         brightness: Brightness.light,
       ),
-      home: HomePage(),
-      //home: Login(),
+      home: Login(),
+      /* initialRoute: '/',
+      routes: {
+        '/': (BuildContext context) => HomePage(),
+        '/login': (BuildContext context) => Login()
+      }, */
       debugShowCheckedModeBanner: false,
     );
   }
