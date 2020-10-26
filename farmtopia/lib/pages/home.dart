@@ -1,7 +1,7 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart'; // interactive bottom navigation bar package
 import 'package:farmtopia/components/post.dart';
 import 'package:farmtopia/pages/profile.dart';
-import 'package:farmtopia/pages/settings.dart';
+import 'package:farmtopia/pages/inbox.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart'; // google font package, fetch font http
 
@@ -65,7 +65,7 @@ class _HomePageState extends State<HomePage> {
               Container(
                 color: Color(0xFFFFBA52),
               ),
-              Settings()
+              Inbox()
             ],
           ),
         ),
@@ -97,8 +97,8 @@ class _HomePageState extends State<HomePage> {
                 title: Text('Search'),
                 activeColor: Color(0xFFFFBA52)),
             BottomNavyBarItem(
-                icon: Icon(Icons.settings_sharp),
-                title: Text('Settings'),
+                icon: Icon(Icons.chat_outlined),
+                title: Text('Inbox'),
                 activeColor: Color(0xFFFFBA52)),
           ],
         ));
