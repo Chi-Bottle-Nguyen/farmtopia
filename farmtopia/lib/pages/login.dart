@@ -45,7 +45,7 @@ class Login extends StatelessWidget {
             height: 50.0,
           ),
           RoundedButton(
-            text: 'Signin',
+            text: 'Sign in',
             press: () {
               Navigator.push(
                   context, MaterialPageRoute(builder: (context) => HomePage()));

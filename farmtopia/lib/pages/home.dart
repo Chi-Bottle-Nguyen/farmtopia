@@ -2,6 +2,7 @@ import 'package:bottom_navy_bar/bottom_navy_bar.dart'; // interactive bottom nav
 import 'package:farmtopia/components/post.dart';
 import 'package:farmtopia/pages/profile.dart';
 import 'package:farmtopia/pages/inbox.dart';
+import 'package:farmtopia/pages/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart'; // google font package, fetch font http
 
@@ -14,6 +15,12 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
   PageController _pageController;
+  Icon _searchIcon = new Icon(Icons.search);
+  Widget _appBarTitle = new Text(
+    'Farmtopia',
+    style: GoogleFonts.pacifico(fontSize: 30.0),
+    overflow: TextOverflow.ellipsis,
+  );
 
   @override
   void initState() {
@@ -29,6 +36,27 @@ class _HomePageState extends State<HomePage> {
     super.dispose();
   }
 
+//Referenced from this article: https://medium.com/flutterpub/a-simple-search-bar-in-flutter-f99aed68f523
+  void _searchPressed() {
+    setState(() {
+      if (this._searchIcon.icon == Icons.search) {
+        this._searchIcon = new Icon(Icons.close);
+        this._appBarTitle = new TextField(
+          decoration: new InputDecoration(
+              //prefixIcon: new Icon(Icons.search),
+              hintText: 'Search something...'),
+        );
+      } else {
+        this._searchIcon = new Icon(Icons.search);
+        this._appBarTitle = new Text(
+          'Farmtopia',
+          style: GoogleFonts.pacifico(fontSize: 30.0),
+          overflow: TextOverflow.ellipsis,
+        );
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,13 +66,11 @@ class _HomePageState extends State<HomePage> {
           preferredSize: Size.fromHeight(60.0),
           //   *****CREATING APP BAR*****
           child: AppBar(
-            title: Text(
-              'Farmtopia',
-              style: GoogleFonts.pacifico(fontSize: 30.0),
-              overflow: TextOverflow.ellipsis,
-            ),
-            centerTitle: true,
-          ),
+              automaticallyImplyLeading: false,
+              title: _appBarTitle,
+              centerTitle: true,
+              leading:
+                  new IconButton(icon: _searchIcon, onPressed: _searchPressed)),
         ),
         body: SizedBox.expand(
           child: PageView(
@@ -62,10 +88,8 @@ class _HomePageState extends State<HomePage> {
               Container(
                 color: Color(0xFFFFBA52),
               ),
-              Container(
-                color: Color(0xFFFFBA52),
-              ),
-              Inbox()
+              Inbox(),
+              Settings()
             ],
           ),
         ),
@@ -93,12 +117,12 @@ class _HomePageState extends State<HomePage> {
                 title: Text('Post'),
                 activeColor: Color(0xFFFFBA52)),
             BottomNavyBarItem(
-                icon: Icon(Icons.search),
-                title: Text('Search'),
-                activeColor: Color(0xFFFFBA52)),
-            BottomNavyBarItem(
                 icon: Icon(Icons.chat_outlined),
                 title: Text('Inbox'),
+                activeColor: Color(0xFFFFBA52)),
+            BottomNavyBarItem(
+                icon: Icon(Icons.settings_sharp),
+                title: Text('Settings'),
                 activeColor: Color(0xFFFFBA52)),
           ],
         ));
@@ -108,18 +132,22 @@ class _HomePageState extends State<HomePage> {
     return ListView(
       children: [
         BlogPost(
+          author: 'Fawzia',
           content:
               'Some content blah blah blah blah\nsome stuff hhhhihihihihihihihihihi \ntesting testing',
         ),
         BlogPost(
+          author: 'Joe Doe',
           content:
               'Some content blah blah blah blah\nsome stuff hhhhihihihihihihihihihi \ntesting testing',
         ),
         BlogPost(
+          author: 'Some Farmer',
           content:
               'Some content blah blah blah blah\nsome stuff hhhhihihihihihihihihihi \ntesting testing',
         ),
         BlogPost(
+          author: 'Other Farmer',
           content:
               'Some content blah blah blah blah\nsome stuff hhhhihihihihihihihihihi \ntesting testing',
         )

@@ -55,10 +55,12 @@ class _ProfileState extends State<Profile> {
           children: [
             SizedBox(height: 20.0),
             BlogPost(
+              author: 'Fawzia',
               content:
                   'Some content blah blah blah blah\nsome stuff hhhhihihihihihihihihihi \ntesting testing',
             ),
             BlogPost(
+              author: 'Fawzia',
               content:
                   'Some content blah blah blah blah\nsome stuff hhhhihihihihihihihihihi \ntesting testing',
             )
