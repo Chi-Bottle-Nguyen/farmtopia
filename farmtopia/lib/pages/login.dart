@@ -1,10 +1,14 @@
 import 'package:farmtopia/components/rounded_button.dart';
-//import 'package:farmtopia/pages/home.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-//References: https://heartbeat.fritz.ai/firebase-user-authentication-in-flutter-1635fb175675
+/*References: 
+How to structure authentication: https://heartbeat.fritz.ai/firebase-user-authentication-in-flutter-1635fb175675 
+Firebase authentication doc: https://firebase.flutter.dev/docs/auth/usage/
+Flutter form: https://flutter.dev/docs/cookbook/forms/validation
+*/
+
 class Login extends StatefulWidget {
   @override
   _LoginState createState() => _LoginState();
@@ -101,36 +105,10 @@ class _LoginState extends State<Login> {
                           }
                         }
                       }
-                      /* Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => HomePage())); */
                     },
                   )
                 ],
               )),
-          /*     Padding(
-              padding: EdgeInsets.only(left: 20.0, right: 30.0),
-              child: TextFormField(
-                  decoration: const InputDecoration(
-                icon: Icon(Icons.person),
-                labelText: 'Username',
-              ))),
-          Padding(
-              padding: EdgeInsets.only(left: 20.0, right: 30.0),
-              child: TextFormField(
-                  decoration: const InputDecoration(
-                icon: Icon(Icons.lock_outline),
-                labelText: 'Password',
-              ))),
-          SizedBox(
-            height: 50.0,
-          ),
-          RoundedButton(
-            text: 'Sign in',
-            press: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => HomePage()));
-            },
-          ), */
           SizedBox(height: 20.0),
           RoundedButton(text: 'Register')
         ]),
