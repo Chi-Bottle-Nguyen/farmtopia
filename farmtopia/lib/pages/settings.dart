@@ -1,5 +1,5 @@
-import 'package:farmtopia/pages/login.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Settings extends StatelessWidget {
   @override
@@ -12,9 +12,14 @@ class Settings extends StatelessWidget {
                 padding: EdgeInsets.only(left: 15.0, top: 20.0, right: 10.0),
                 child: Container(
                   child: FlatButton(
-                      onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Login()));
+                      onPressed: () async {
+                        await FirebaseAuth.instance
+                            .signOut()
+                            .then((result) => Navigator.pushReplacementNamed(
+                                context, "/login"))
+                            .catchError((err) => print(err));
+                        /* Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Login())); */
                       },
                       child: new Text('Sign out',
                           style: new TextStyle(

@@ -1,38 +1,13 @@
 import 'package:flutter/material.dart';
-//import 'package:farmtopia/pages/home.dart';
+import 'package:farmtopia/pages/home.dart';
 import 'package:farmtopia/pages/login.dart';
 import 'package:farmtopia/pages/loading.dart';
 import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(App());
-}
-
-class App extends StatelessWidget {
-  // Create the initialization Future outside of `build`:
-  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
-
-  @override
-  Widget build(BuildContext context) {
-    return FutureBuilder(
-      // Initialize FlutterFire:
-      future: _initialization,
-      builder: (context, snapshot) {
-        /* // Check for errors
-        if (snapshot.hasError) {
-          return SomethingWentWrong();
-        } */
-        // Once complete, show your application
-        if (snapshot.connectionState == ConnectionState.done) {
-          return MyApp();
-        }
-
-        // Otherwise, show something whilst waiting for initialization to complete
-        return Loading();
-      },
-    );
-  }
+  await Firebase.initializeApp();
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -45,12 +20,13 @@ class MyApp extends StatelessWidget {
         //primaryColor: Color(0xFFFFBA52),
         brightness: Brightness.light,
       ),
-      home: Login(),
-      /* initialRoute: '/',
+      home: Loading(),
+      initialRoute: '/',
       routes: {
-        '/': (BuildContext context) => HomePage(),
-        '/login': (BuildContext context) => Login()
-      }, */
+        '/home': (BuildContext context) => HomePage(),
+        '/login': (BuildContext context) => Login(),
+        //'/register': (BuildContext context) => Register()
+      },
       debugShowCheckedModeBanner: false,
     );
   }

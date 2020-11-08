@@ -1,9 +1,34 @@
 import 'package:farmtopia/components/rounded_button.dart';
-import 'package:farmtopia/pages/home.dart';
+//import 'package:farmtopia/pages/home.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-class Login extends StatelessWidget {
+//References: https://heartbeat.fritz.ai/firebase-user-authentication-in-flutter-1635fb175675
+class Login extends StatefulWidget {
+  @override
+  _LoginState createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
+  final GlobalKey<FormState> _loginFormKey = GlobalKey<FormState>();
+  TextEditingController emailInputController;
+  TextEditingController pwdInputController;
+
+  @override
+  initState() {
+    emailInputController = new TextEditingController();
+    pwdInputController = new TextEditingController();
+    super.initState();
+  }
+
+  String tempValidator(String value) {
+    if (value.isEmpty) {
+      return 'Please enter some text';
+    }
+    return null;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +52,62 @@ class Login extends StatelessWidget {
           SizedBox(
             height: 10.0,
           ),
-          Padding(
+          Form(
+              key: _loginFormKey,
+              child: Column(
+                children: [
+                  //EMAIL
+                  Padding(
+                      padding: EdgeInsets.only(left: 20.0, right: 30.0),
+                      child: TextFormField(
+                          controller: emailInputController,
+                          keyboardType: TextInputType.emailAddress,
+                          validator: tempValidator,
+                          decoration: const InputDecoration(
+                            icon: Icon(Icons.person),
+                            labelText: 'Email',
+                          ))),
+                  //PASSWORD
+                  Padding(
+                      padding: EdgeInsets.only(left: 20.0, right: 30.0),
+                      child: TextFormField(
+                          controller: pwdInputController,
+                          validator: tempValidator,
+                          obscureText: true,
+                          decoration: const InputDecoration(
+                            icon: Icon(Icons.lock_outline),
+                            labelText: 'Password',
+                          ))),
+                  SizedBox(
+                    height: 50.0,
+                  ),
+                  RoundedButton(
+                    text: 'Sign in',
+                    press: () async {
+                      if (_loginFormKey.currentState.validate()) {
+                        //Login function
+                        try {
+                          await FirebaseAuth.instance
+                              .signInWithEmailAndPassword(
+                                  email: emailInputController.text,
+                                  password: pwdInputController.text)
+                              .then((result) => Navigator.pushReplacementNamed(
+                                  context, "/home"));
+                        } on FirebaseAuthException catch (e) {
+                          if (e.code == 'user-not-found') {
+                            print('No account found for that email.');
+                          } else if (e.code == 'wrong-password') {
+                            print('Wrong password provided.');
+                          }
+                        }
+                      }
+                      /* Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => HomePage())); */
+                    },
+                  )
+                ],
+              )),
+          /*     Padding(
               padding: EdgeInsets.only(left: 20.0, right: 30.0),
               child: TextFormField(
                   decoration: const InputDecoration(
@@ -50,7 +130,7 @@ class Login extends StatelessWidget {
               Navigator.push(
                   context, MaterialPageRoute(builder: (context) => HomePage()));
             },
-          ),
+          ), */
           SizedBox(height: 20.0),
           RoundedButton(text: 'Register')
         ]),
