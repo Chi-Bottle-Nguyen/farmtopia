@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
-//import 'package:farmtopia/pages/home.dart';
+import 'package:farmtopia/pages/home.dart';
 import 'package:farmtopia/pages/login.dart';
+import 'package:farmtopia/pages/loading.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() => runApp(MyApp());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -10,16 +16,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Our app',
       theme: ThemeData(
-        //primaryColor: Colors.red[300],
-        primaryColor: Color(0xFFE683A9),
+        primaryColor: Colors.red[300],
+        //primaryColor: Color(0xFFFFBA52),
         brightness: Brightness.light,
       ),
-      home: Login(),
-      /* initialRoute: '/',
+      home: Loading(),
+      initialRoute: '/',
       routes: {
-        '/': (BuildContext context) => HomePage(),
-        '/login': (BuildContext context) => Login()
-      }, */
+        '/home': (BuildContext context) => HomePage(),
+        '/login': (BuildContext context) => Login(),
+        //'/register': (BuildContext context) => Register()
+      },
       debugShowCheckedModeBanner: false,
     );
   }

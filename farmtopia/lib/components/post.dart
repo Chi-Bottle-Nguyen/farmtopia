@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class BlogPost extends StatelessWidget {
+  final String author;
   final String content;
 
-  const BlogPost({this.content});
+  const BlogPost({this.author, this.content});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +34,7 @@ class BlogPost extends StatelessWidget {
                     children: [
                       Row(children: [
                         Text(
-                          'Name',
+                          this.author,
                           style: TextStyle(fontSize: 24.0),
                         ),
                         SizedBox(
