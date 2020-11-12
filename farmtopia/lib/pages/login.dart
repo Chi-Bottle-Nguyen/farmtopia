@@ -1,5 +1,6 @@
 import 'package:farmtopia/components/rounded_button.dart';
 import 'package:farmtopia/pages/home.dart';
+import 'package:farmtopia/pages/register.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -52,7 +53,12 @@ class Login extends StatelessWidget {
             },
           ),
           SizedBox(height: 20.0),
-          RoundedButton(text: 'Register')
+          RoundedButton(
+              text: 'Register',
+              press: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Register()));
+              })
         ]),
       ),
     );
