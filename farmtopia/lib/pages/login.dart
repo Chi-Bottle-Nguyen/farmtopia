@@ -1,9 +1,5 @@
 import 'package:farmtopia/components/rounded_button.dart';
-<<<<<<< HEAD
-import 'package:farmtopia/pages/home.dart';
 import 'package:farmtopia/pages/register.dart';
-=======
->>>>>>> ec968a632c8af83cdaaab77f4ec381e0dee43979
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:firebase_auth/firebase_auth.dart';
