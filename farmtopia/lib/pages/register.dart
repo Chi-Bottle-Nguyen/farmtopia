@@ -2,7 +2,7 @@ import 'package:farmtopia/components/rounded_button.dart';
 import 'package:farmtopia/pages/login.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:farmtopia/pages/registerr.dart';
+//import 'package:farmtopia/pages/registerr.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class Register extends StatefulWidget {

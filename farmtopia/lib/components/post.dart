@@ -11,7 +11,7 @@ class BlogPost extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(left: 20.0, top: 20.0, right: 10.0),
       child: Container(
-          height: 160.0,
+          height: 200.0,
           decoration: BoxDecoration(boxShadow: [
             BoxShadow(
                 color: Colors.grey,
@@ -44,7 +44,7 @@ class BlogPost extends StatelessWidget {
                       ]),
                       Text('10-23-2020')
                     ],
-                  )
+                  ),
                 ],
               ),
               SizedBox(
@@ -54,6 +54,34 @@ class BlogPost extends StatelessWidget {
                 this.content,
                 textAlign: TextAlign.start,
                 style: TextStyle(fontSize: 18.0),
+              ),
+              const Divider(
+                color: Colors.blueGrey,
+                height: 30,
+                thickness: 1,
+                indent: 0,
+                endIndent: 0,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: const <Widget>[
+                  Icon(
+                    Icons.thumb_up_outlined,
+                    color: Colors.blueGrey,
+                  ),
+                  Icon(
+                    Icons.insert_comment_outlined,
+                    color: Colors.blueGrey,
+                  ),
+                  Icon(
+                    Icons.share_outlined,
+                    color: Colors.blueGrey,
+                  ),
+                  Icon(
+                    Icons.bookmark_border,
+                    color: Colors.blueGrey,
+                  )
+                ],
               )
             ],
           )),
