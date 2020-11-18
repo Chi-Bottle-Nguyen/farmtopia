@@ -22,7 +22,7 @@ class _ProfileState extends State<Profile> {
               CircleAvatar(
                   radius: 60.0,
                   backgroundImage: NetworkImage(
-                      'https://www.clinicasamaniego.com/wp-content/uploads/sites/5/2018/10/uno.png')),
+                      'https://image.flaticon.com/icons/png/512/206/206865.png')),
               SizedBox(width: 20.0),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,18 +49,22 @@ class _ProfileState extends State<Profile> {
       Container(
         height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
-            color: Colors.white,
+            color: Colors.grey[100],
             borderRadius: BorderRadius.only(topLeft: Radius.circular(75.0))),
         child: ListView(
           children: [
             SizedBox(height: 20.0),
             BlogPost(
               author: 'Fawzia',
+              profilePic:
+                  'https://image.flaticon.com/icons/png/512/206/206865.png',
               content:
                   'Some content blah blah blah blah\nsome stuff hhhhihihihihihihihihihi \ntesting testing',
             ),
             BlogPost(
               author: 'Fawzia',
+              profilePic:
+                  'https://image.flaticon.com/icons/png/512/206/206865.png',
               content:
                   'Some content blah blah blah blah\nsome stuff hhhhihihihihihihihihihi \ntesting testing',
             )

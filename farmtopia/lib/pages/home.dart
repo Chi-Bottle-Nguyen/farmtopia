@@ -130,27 +130,47 @@ class _HomePageState extends State<HomePage> {
 
   Widget _mybody() {
     return ListView(
+      padding: EdgeInsets.only(bottom: 20.0),
       children: [
         BlogPost(
           author: 'Fawzia',
+          profilePic: 'https://image.flaticon.com/icons/png/512/206/206865.png',
+          content:
+              'Hello. It\'s my first time farming.\nWill need lots of advice.',
+        ),
+        BlogPost(
+          author: 'Joe Doe',
+          profilePic:
+              'https://slyszecbezgranic.pl/wp-content/uploads/2017/04/avatar-round-3-1.png',
+          content:
+              'Remember: Over-watering could \ncause runoff.\nDM me for advices.',
+        ),
+        BlogPost(
+          author: 'Some Farmer',
+          content:
+              'Spotted lattern flies are coming\nPrepare your bug sprays.\nProtect your plants.',
+        ),
+        BlogPost(
+          author: 'Other Farmer',
+          profilePic:
+              'https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Farmer-512.png',
+          content:
+              'Spotted lattern flies are like drunk \nairplanes. One hit my face today.\nStep on them if you can.',
+        ),
+        BlogPost(
+          author: 'Other Farmer',
+          profilePic:
+              'https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Farmer-512.png',
           content:
               'Some content blah blah blah blah\nsome stuff hhhhihihihihihihihihihi \ntesting testing',
         ),
         BlogPost(
           author: 'Joe Doe',
+          profilePic:
+              'https://slyszecbezgranic.pl/wp-content/uploads/2017/04/avatar-round-3-1.png',
           content:
               'Some content blah blah blah blah\nsome stuff hhhhihihihihihihihihihi \ntesting testing',
         ),
-        BlogPost(
-          author: 'Some Farmer',
-          content:
-              'Some content blah blah blah blah\nsome stuff hhhhihihihihihihihihihi \ntesting testing',
-        ),
-        BlogPost(
-          author: 'Other Farmer',
-          content:
-              'Some content blah blah blah blah\nsome stuff hhhhihihihihihihihihihi \ntesting testing',
-        )
       ],
     );
     /*  return Center(

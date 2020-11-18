@@ -3,15 +3,21 @@ import 'package:flutter/material.dart';
 class BlogPost extends StatelessWidget {
   final String author;
   final String content;
+  final String profilePic;
+  static const String defaultImage =
+      'https://www.clinicasamaniego.com/wp-content/uploads/sites/5/2018/10/uno.png';
 
-  const BlogPost({this.author, this.content});
+  const BlogPost(
+      {this.author = 'Guest',
+      this.content = '',
+      this.profilePic = defaultImage});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(left: 20.0, top: 20.0, right: 10.0),
       child: Container(
-          height: 200.0,
+          height: 210.0,
           decoration: BoxDecoration(boxShadow: [
             BoxShadow(
                 color: Colors.grey,
@@ -25,9 +31,7 @@ class BlogPost extends StatelessWidget {
               Row(
                 children: [
                   SizedBox(width: 10.0),
-                  CircleAvatar(
-                      backgroundImage: NetworkImage(
-                          'https://www.clinicasamaniego.com/wp-content/uploads/sites/5/2018/10/uno.png')),
+                  CircleAvatar(backgroundImage: NetworkImage(this.profilePic)),
                   SizedBox(width: 10.0),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -48,12 +52,17 @@ class BlogPost extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 20.0,
+                height: 15.0,
               ),
-              Text(
-                this.content,
-                textAlign: TextAlign.start,
-                style: TextStyle(fontSize: 18.0),
+              Container(
+                height: 75.0,
+                padding: EdgeInsets.only(left: 5.0, right: 5.0),
+                child: Text(
+                  this.content,
+                  overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.start,
+                  style: TextStyle(fontSize: 20.0),
+                ),
               ),
               const Divider(
                 color: Colors.blueGrey,
