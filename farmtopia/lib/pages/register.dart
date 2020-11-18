@@ -68,6 +68,7 @@ class _RegisterState extends State<Register> {
                   Padding(
                       padding: EdgeInsets.only(left: 20.0, right: 30.0),
                       child: TextFormField(
+                          obscureText: true,
                           controller: pwdInputController,
                           validator: tempValidator,
                           decoration: const InputDecoration(
@@ -77,10 +78,11 @@ class _RegisterState extends State<Register> {
                   Padding(
                       padding: EdgeInsets.only(left: 20.0, right: 30.0),
                       child: TextFormField(
+                          obscureText: true,
                           decoration: const InputDecoration(
-                        icon: Icon(Icons.lock_outline),
-                        labelText: 'Re-enter Password',
-                      ))),
+                            icon: Icon(Icons.lock_outline),
+                            labelText: 'Re-enter Password',
+                          ))),
                   SizedBox(height: 30.0),
                   RoundedButton(
                       text: 'Continue',
