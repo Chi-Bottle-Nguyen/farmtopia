@@ -50,7 +50,7 @@ class _ProfileState extends State<Profile> {
         height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
             color: Colors.grey[100],
-            borderRadius: BorderRadius.only(topLeft: Radius.circular(75.0))),
+            borderRadius: BorderRadius.only(topLeft: Radius.circular(1.0))),
         child: ListView(
           children: [
             SizedBox(height: 20.0),

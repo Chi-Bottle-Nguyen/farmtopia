@@ -1,23 +1,19 @@
 import 'package:flutter/material.dart';
 
-class BlogPost extends StatelessWidget {
+class Postfeature extends StatelessWidget {
   final String author;
-  final String content;
   final String profilePic;
   static const String defaultImage =
       'https://www.clinicasamaniego.com/wp-content/uploads/sites/5/2018/10/uno.png';
 
-  const BlogPost(
-      {this.author = 'Guest',
-      this.content = '',
-      this.profilePic = defaultImage});
+  const Postfeature({this.author = 'Guest', this.profilePic = defaultImage});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 10.0, top: 10.0, right: 10.0),
+      padding: EdgeInsets.only(left: 10.0, top: 70.0, right: 10.0),
       child: Container(
-          height: 210.0,
+          height: 410.0,
           decoration: BoxDecoration(boxShadow: [
             BoxShadow(
                 color: Colors.grey,
@@ -52,18 +48,15 @@ class BlogPost extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 15.0,
+                height: 20.0,
               ),
               Container(
-                height: 75.0,
-                padding: EdgeInsets.only(left: 5.0, right: 5.0),
-                child: Text(
-                  this.content,
-                  // overflow: TextOverflow.ellipsis,
-                  textAlign: TextAlign.start,
-                  style: TextStyle(fontSize: 20.0),
-                ),
-              ),
+                  height: 265.0,
+                  padding: EdgeInsets.only(left: 10.0, right: 10.0),
+                  child: TextField(
+                      decoration: InputDecoration(
+                          border: InputBorder.none, hintText: 'Make a post'),
+                      style: TextStyle(fontSize: 20.0))),
               const Divider(
                 color: Colors.blueGrey,
                 height: 30,
@@ -75,19 +68,23 @@ class BlogPost extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: const <Widget>[
                   Icon(
-                    Icons.thumb_up_outlined,
+                    Icons.upload_outlined,
                     color: Colors.blueGrey,
                   ),
                   Icon(
-                    Icons.insert_comment_outlined,
+                    Icons.assignment_ind_outlined,
                     color: Colors.blueGrey,
                   ),
                   Icon(
-                    Icons.share_outlined,
+                    Icons.add_photo_alternate_outlined,
                     color: Colors.blueGrey,
                   ),
                   Icon(
-                    Icons.bookmark_border,
+                    Icons.camera_alt_outlined,
+                    color: Colors.blueGrey,
+                  ),
+                  Icon(
+                    Icons.chat_outlined,
                     color: Colors.blueGrey,
                   )
                 ],

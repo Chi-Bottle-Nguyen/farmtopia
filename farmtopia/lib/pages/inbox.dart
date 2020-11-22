@@ -91,45 +91,6 @@ class _InboxState extends State<Inbox> {
                     ),
                   ],
                 ),
-                const Divider(
-                  color: Colors.blueGrey,
-                  height: 30,
-                  thickness: 1,
-                  indent: 20,
-                  endIndent: 20,
-                ),
-                Row(
-                  children: [
-                    SizedBox(
-                      width: 20.0,
-                    ),
-                    CircleAvatar(
-                        backgroundImage: NetworkImage(
-                            'https://slyszecbezgranic.pl/wp-content/uploads/2017/04/avatar-round-3-1.png')),
-                    SizedBox(
-                      width: 20.0,
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('Real Joe Doe',
-                            style: new TextStyle(
-                              color: Colors.grey[900],
-                              fontSize: 25.0,
-                              fontWeight: FontWeight.w500,
-                              letterSpacing: 0.3,
-                            )),
-                        SizedBox(
-                          height: 5.0,
-                        ),
-                        Text('Dont trust the above Joe Doe.',
-                            style: new TextStyle(
-                              color: Colors.black,
-                            ))
-                      ],
-                    ),
-                  ],
-                ),
                 SizedBox(height: 10.0),
               ],
             ),

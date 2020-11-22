@@ -3,6 +3,7 @@ import 'package:farmtopia/components/post.dart';
 import 'package:farmtopia/pages/profile.dart';
 import 'package:farmtopia/pages/inbox.dart';
 import 'package:farmtopia/pages/settings.dart';
+import 'package:farmtopia/pages/post.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart'; // google font package, fetch font http
 
@@ -85,9 +86,7 @@ class _HomePageState extends State<HomePage> {
               _mybody(),
               Profile(),
               //Placeholder
-              Container(
-                color: Color(0xFFFFBA52),
-              ),
+              Post(),
               Inbox(),
               Settings()
             ],
